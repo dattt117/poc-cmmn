@@ -122,3 +122,217 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom scrollbar styling */
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full hover:bg-border/80 transition-colors;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/30;
+  }
+}
+
+/* Smooth animations */
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-from-bottom {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-from-left {
+    from {
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-in {
+    animation: fade-in 0.5s ease-out;
+  }
+  
+  .fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+  
+  .slide-in-from-bottom-4 {
+    animation: slide-in-from-bottom 0.5s ease-out;
+  }
+  
+  .slide-in-from-left-4 {
+    animation: slide-in-from-left 0.5s ease-out;
+  }
+  
+  .slide-in-from-bottom-2 {
+    animation: slide-in-from-bottom 0.3s ease-out;
+  }
+  
+  /* Force step mới luôn bắt đầu ẩn để tránh flash */
+  .step-new-initial {
+    opacity: 0 !important;
+    transform: translateX(-30px) scale(0.9) !important;
+    pointer-events: none !important;
+  }
+  
+  /* Calendar base styles override - Reset react-day-picker defaults */
+  .rdp {
+    --rdp-cell-size: 36px;
+    --rdp-accent-color: hsl(var(--primary));
+    --rdp-background-color: hsl(var(--background));
+    --rdp-accent-color-dark: hsl(var(--primary));
+    --rdp-background-color-dark: hsl(var(--background));
+    --rdp-outline: 2px solid hsl(var(--ring));
+    --rdp-outline-selected: 2px solid hsl(var(--primary));
+    margin: 0;
+    font-family: inherit;
+  }
+  
+  /* Fix calendar table layout */
+  .rdp-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 0 !important;
+  }
+  
+  /* Fix calendar header row */
+  .rdp-head_row {
+    display: flex !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .rdp-head_cell {
+    width: 36px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    font-size: 0.8rem !important;
+    font-weight: normal !important;
+  }
+  
+  /* Fix calendar body rows */
+  .rdp-row {
+    display: flex !important;
+    width: 100% !important;
+    margin-top: 0.5rem !important;
+    padding: 0 !important;
+  }
+  
+  .rdp-cell {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    position: relative !important;
+  }
+  
+  /* Fix calendar day buttons */
+  .rdp-day {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0.375rem !important;
+    font-size: 0.875rem !important;
+    font-weight: normal !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  /* Calendar navigation buttons styling */
+  .rdp-nav_button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 28px !important;
+    height: 28px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .rdp-nav_button svg {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+  
+  /* Calendar caption (month/year) */
+  .rdp-caption {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: relative !important;
+    padding-top: 0.25rem !important;
+    margin: 0 !important;
+  }
+  
+  .rdp-caption_label {
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Calendar month container */
+  .rdp-month {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .rdp-months {
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Selected day styling */
+  .rdp-day_selected,
+  .rdp-day_selected:focus-visible,
+  .rdp-day_selected:hover {
+    background-color: hsl(var(--primary)) !important;
+    color: hsl(var(--primary-foreground)) !important;
+  }
+  
+  /* Today styling */
+  .rdp-day_today:not(.rdp-day_outside) {
+    background-color: hsl(var(--accent)) !important;
+    color: hsl(var(--accent-foreground)) !important;
+  }
+  
+  /* Button hover */
+  .rdp-button:hover:not([disabled]) {
+    background-color: hsl(var(--accent)) !important;
+  }
+}
