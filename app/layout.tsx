@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     siteName: "POC CMMN",
     images: [
       {
-        url: "https://www.brookings.edu/wp-content/uploads/2017/11/metro_20171121_tech-empowers-tech-polarizes-mark-muro.jpg",
-        width: 1200,
-        height: 630
+        url: "https://www.syte.ai/wp-content/uploads/2021/10/Glossary-Images-1-24_23-1024x625.jpg",
+        width: 1024,
+        height: 625
       }
     ]
   },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "POC CMMN",
     description: "Giải pháp CMMN",
     images: [
-      "https://www.brookings.edu/wp-content/uploads/2017/11/metro_20171121_tech-empowers-tech-polarizes-mark-muro.jpg"
+      "https://www.syte.ai/wp-content/uploads/2021/10/Glossary-Images-1-24_23-1024x625.jpg"
     ]
   },
   robots: {
