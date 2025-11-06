@@ -13,14 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vercel.com/"),
+  metadataBase: new URL("https://poc-cmmn.vercel.app"),
   title: "POC CMMN",
   description: "Giải pháp CMMN",
   keywords: ["CMMN", "POC", "CMMN", "CMMN", "CMMN"],
   openGraph: {
     title: "POC CMMN",
     description: "Giải pháp CMMN",
-    url: "https://vercel.com/",
+    url: "https://poc-cmmn.vercel.app",
     siteName: "POC CMMN",
     images: [
       {
